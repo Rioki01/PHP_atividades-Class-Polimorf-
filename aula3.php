@@ -79,6 +79,32 @@ echo "Nome do autor:". $livro2->getAutor() ."<br>";
 // Crie um objeto da classe 'Cachorro' e exiba suas propriedades.
 echo "<br>3)";
 
+class Animal{
+    private $nome;
+    private $idade;
+
+    public function __construct($nome, $idade){
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+    public function getNome(){
+        return $this->nome;
+    }
+    public function getIdade(){
+        return $this->idade;
+    }
+}
+
+
+
+class Cachorro extends Animal{
+
+
+}
+
+$cachorro = New Cachorro("Dog","5");
+echo "o Cachorro se chama: " . $cachorro->getNome(). " que tem ". $cachorro->getIdade()." anos" . "<br>";
+
 ?>
 
 <?php
@@ -88,9 +114,9 @@ echo "<br>3)";
 // protegidas e utilize métodos getters e setters para acessá-las e modificá-las.
 echo "<br>4)";
 
+
+
 ?>
-
-
 <?php
 /////////////////////////////////////////////////////////////////
 // Crie uma classe chamada 'Calculadora' com um método estático chamado 'soma' 
