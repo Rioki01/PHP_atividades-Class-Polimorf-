@@ -106,22 +106,53 @@ class Cachorro extends Animal{
 }
 
 $cachorro = New Cachorro("Dog","5");
-echo "o Cachorro se chama: " . $cachorro->getNome() . "<br>";
-echo "A idade do seu cachorro mais um é : ". $cachorro->setIdade($cachorro->getIdade());
+echo "o Cachorro se chama: " . $cachorro->getNome() . " e tem " .$cachorro->getIdade() ." anos". "<br>";
+echo "A idade do seu cachorro vezes 7 é: ". $cachorro->setIdade($cachorro->getIdade());
 
 ?>
 
 <?php
+echo "<br>";
 /////////////////////////////////////////////////////////////////
 // Modifique a classe 'Cachorro' do exercício anterior.
-// Torne as propriedades 'nome' e 'idade'
-// protegidas e utilize métodos getters e setters para acessá-las e modificá-las.
+// Torne as propriedades 'nome' e 'idade' protegidas
+// e utilize métodos getters e setters para acessá-las e modificá-las.
 echo "<br>4)";
 
+class Animal2{
+    protected $nome;
+    protected $idade;
+
+    public function __construct($nome, $idade){
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+    public function getNome(){
+        return $this->nome;
+    }
+    public function getIdade(){
+        return $this->idade;
+    }
+    public function setIdade($novaIdade){
+        return $this->idade = $novaIdade;
+    }
+    public function setNome($novoNome){
+        return $this->nome = $novoNome;
+    }
+}
+
+class Cachorro2 extends Animal2{
+
+}
+
+$cachorro2 = New Cachorro2("Dog2","5");
+echo "o Cachorro se chama: " . $cachorro2->getNome() . "<br>";
+echo "mas agora se chamará: ". $cachorro2->setNome("Cachorro");
 
 
 ?>
 <?php
+echo "<br>";
 /////////////////////////////////////////////////////////////////
 // Crie uma classe chamada 'Calculadora' com um método estático chamado 'soma' 
 // que recebe dois números e retorna a soma.
