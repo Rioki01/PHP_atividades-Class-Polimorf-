@@ -93,19 +93,21 @@ class Animal{
     public function getIdade(){
         return $this->idade;
     }
+    public function setIdade($novaIdade){
+        $this->idade = $novaIdade;
+    }
 }
 
 class Cachorro extends Animal{
 
-public function mudarIdade($idade){
-    echo "" . $idade + 1;
-}
+    public function setIdade($novaIdade){
+        return $this->idade = $novaIdade * 7;
+    }
 }
 
 $cachorro = New Cachorro("Dog","5");
-echo "o Cachorro se chama: " . $cachorro->getNome(). " que tem ". $cachorro->getIdade()." anos" . "<br>";
-echo "A idade do seu cachorro mais um é : ";
-echo "" . $cachorro->mudarIdade($cachorro->getIdade());
+echo "o Cachorro se chama: " . $cachorro->getNome() . "<br>";
+echo "A idade do seu cachorro mais um é : ". $cachorro->setIdade($cachorro->getIdade());
 
 ?>
 
