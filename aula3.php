@@ -159,6 +159,15 @@ echo "<br>";
 // Não é necessário instanciar a classe para utilizar o método 'soma'.
 // Demonstre a utilização deste método.
 echo "<br>5)";
+class Calculadora{
+    public static function soma($numero1, $numero2){
+        $resultado=$numero1+$numero2;
+        return $resultado;
+    }
+}
+
+$valor = new Calculadora();
+echo $valor->soma(1,5);
 
 
 ?>
